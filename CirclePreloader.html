@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Circle Preloader</title>
+  <style>
+    body{
+      background-color: #333;
+    }
+    #preloader{
+      width: 200px;
+      height: 200px;
+      /*background-color: white;*/
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -100px;
+      margin-left: -100px;
+    }
+    #preloader .big{
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      margin-left: -3px;
+      margin-top: -3px;
+      /*background-color: red;*/
+      border-radius: 60px;
+      border: 3px solid cyan;
+    }
+    #preloader .small{
+      width: 9px;
+      height: 9px;
+      background-color: white;
+      border-radius: 50px;
+      position: absolute;
+      top: 45.5px;
+      left: -9px;
+      border: 3px solid #333;
+    }
+    #preloader .satelite{
+      width: 3px;
+      height: 3px;
+      background-color: cyan;
+      border-radius: 60px;
+      position: absolute;
+      top: 3px;
+      left: -20px;
+
+    }
+
+    /* Declaram o animatie */
+    /* At-rules @ */
+    @keyframes orbit{
+      from{ transform: rotate(0deg);}
+        to {transform: rotate(360deg);}
+    }
+
+    @keyframes satelite1{
+      from{transform: rotate(0deg);}
+        to{transform: rotate(-360deg);}
+    }
+    /*Alipirea cu elementul dorit*/
+    #preloader .big{
+      animation: orbit 3s infinite linear;
+    }
+    #preloader .small{
+      animation: satelite1 1s infinite linear;
+    }
+  </style>
+</head>
+<body>
+  <div id="preloader">
+    <div class="big">
+      <div class="small">
+        <div class="satelite"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
